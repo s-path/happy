@@ -13,36 +13,29 @@
 			<img src="https://shibukawa-massage-happy.com/wp-content/uploads/2023/12/karada01.png" alt="">
 		<!-- 
         <img src="<?php bloginfo('template_directory'); ?>/images/67price.png" alt="">
-			<p style=" font-size:14px;padding:0 0 0 20px;">2回目以降 整体6,600円(税込) 小顔整体8,800円(税込)</p>
+			<p style=" font-size:14px;padding:0 0 0 20px;">2回目以降 整体6,600円(税込)</p>
         <p style=" font-size:14px; margin-bottom: 10%; padding:0 10px;">（体の圧倒的な変化や整体の良さを体感して頂きたく、初回はこの価格にしております）</p>
 		-->
     </div>
 </div>
 
-    <!-- コロナバナー -->
-    <div style="max-width:800px; margin:0 auto;">
-        <img src="<?php bloginfo('template_directory'); ?>/images/infection.png" alt="">
-    </div>
-<!-- 5つの特徴 -->
+<!-- 整体院Happyが選ばれる５つの理由 -->
     <section class="sec3">
-        <div class="sec3-img_wrapper">
-            <img src="https://shibukawa-massage-happy.com/wp-content/uploads/2021/07/touin.png" alt="" class="sec3-img">
-        </div>
-        <p class="sec3-text sec3-text01">国家資格を持った<span style="color:red;">プロが技術を提供</span>するので安心！</p>
-        <p class="sec3-text sec3-text02">症状の<span style="color:red;">原因を追究して、根本的改善</span>を行います</p>
-        <p class="sec3-text sec3-text03">1回の施術で<span style="color:red;">体の変化を実感</span>できる</p>
-        <p class="sec3-text sec3-text04">「最短での根本改善」や「再発予防」の為の<span style="color:red;">サポートが充実</span></p>
-        <p class="sec3-text sec3-text05"><span style="color:red;">完全予約制・1日7名様限定</span></p>
-        <p class="sec3-text_span"><span class="sec3-text_span02">※当院では新型コロナウイルス対策としてマスク着用・消毒・換気・検温を徹底しております</span></p>
-        <a href="https://shibukawa-massage-happy.com/features/" class="sec3-text_button">もっと詳しく</a>
+        <h2 class="features-banner-ttl">
+            <img src="<?php bloginfo('template_directory'); ?>/images/features-icon.png" alt="" class="features-banner-ttl__icon" width="48" height="48">
+            <span class="features-banner-ttl__text">整体院Happyが選ばれる<br>５つの理由</span>
+        </h2>
+        <p class="sec3-text sec3-text01">国家資格を持つ<span style="color:red;">院長が毎回対応</span></p>
+        <p class="sec3-text sec3-text02">お身体の状態を<span style="color:red;">丁寧に確認</span>します</p>
+        <p class="sec3-text sec3-text03">延べ<span style="color:red;">30,000人以上</span>の施術経験</p>
+        <p class="sec3-text sec3-text04"><span style="color:red;">わかりやすい説明</span>を大切にしています</p>
+        <p class="sec3-text sec3-text05">笑顔で<span style="color:red;">Happyな毎日</span>をサポートします</p>
+        <a href="/features/" class="sec3-text_button">もっと詳しく</a>
     </section>
 <!-- コース -->
     <section class="sec">
     <img src="<?php bloginfo('template_directory'); ?>/images/massagetop.png" alt="">
-        <a href="https://shibukawa-massage-happy.com/bodycare/" class="secH2">整体</a>
-
-        <img src="<?php bloginfo('template_directory'); ?>/images/massagetop-face.png" alt="">
-        <a href="https://shibukawa-massage-happy.com/facecare/" class="secH2">小顔整体</a>
+        <a href="/bodycare/" class="secH2">整体</a>
     </section>
 <!-- 営業時間 -->
     <section class="sec3">
@@ -55,7 +48,7 @@
 <!-- 予約 -->
     <div class="time">
         <!-- <img src="https://shibukawa-massage-happy.com/wp-content/uploads/time.png" alt="" id="time"> -->
-        <!-- <p class="time1"> --><a href="https://shibukawa-massage-happy.com/reservation1/" class="time1">>>　ネット予約　<<</a><!-- </p> -->
+        <!-- <p class="time1"> --><a href="/reservation1/" class="time1">>>　ネット予約　<<</a><!-- </p> -->
         <p class="time-text">
             <span class="time-text_span">整備中の為、お電話でのご予約をお願い致します</span>
         </p>

@@ -153,7 +153,7 @@ header {
     .scroll-header {
         display: block;
         width: 100%;
-        height: 90px;
+        height: 110px;
         background-color: rgba(47, 252, 0, 0.9);
         z-index: 101;
         opacity: 0;
@@ -163,12 +163,26 @@ header {
         top: 0;
         left: 0;
     }
+    /* 管理バー表示時は上端の見切れを防ぐ（body_class / :has 両対応） */
+    .admin-bar .scroll-header,
+    body:has(#wpadminbar) .scroll-header {
+        top: 32px;
+    }
+    @media screen and (max-width: 782px) {
+        .admin-bar .scroll-header,
+        body:has(#wpadminbar) .scroll-header {
+            top: 46px;
+        }
+    }
     .scroll-header_section {
         width: 100%;
         max-width: 948px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin: 0 auto;
+        height: 100%;
+        padding: 4px 0;
     }
 
 
@@ -191,38 +205,72 @@ header {
 
     .scroll-header_wrapper_right {
         padding-right: 10px;
+        flex: 1;
+        max-width: 520px;
+        text-align: center;
     }
     .scroll-header_wrapper_right_img {
         margin-top: 3px;
-        width: 500px;
+        width: 100%;
+        max-width: 500px;
     }
     .scroll-header_list_wrapper01 {
         border-bottom: 1px solid rgba(0,0,0,0.2);
+        padding-bottom: 2px;
+        margin-bottom: 2px;
     }
 
     .scroll-header_list_wrapper {
+        width: 100%;
         max-width: 500px;
-        display: flex;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
         font-size: 10px;
         font-weight: normal;
-        transform: translateY(-5px);
-        padding-left: 10px;
+        transform: none;
+        padding: 0;
+        margin: 0 auto;
+        list-style: none;
+    }
+    .scroll-header_list_wrapper02 {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
         margin: 0 auto;
     }
     .scroll-header_list_wrapper li {
-        min-width: 110px;
-        height: 14px;
-        line-height: 20px;
+        min-width: 0;
+        height: auto;
+        line-height: 1.35;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        padding: 2px 4px;
+    }
+    .scroll-header_list_wrapper01 li:not(:last-child)::after,
+    .scroll-header_list_wrapper02 li:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 70%;
+        background: rgba(0,0,0,0.2);
     }
 	
     .scroll-header_list {
-        padding-left: 5px;
+        padding: 2px 4px;
         display: block;
-        white-space: nowrap;
+        white-space: normal;
         text-align: center;
-        height: 15px;
+        height: auto;
+        line-height: 1.35;
         cursor: pointer;
+        width: 100%;
     }
     .scroll-header_list_wrapper  {
         cursor: pointer;
@@ -233,26 +281,28 @@ header {
         cursor: pointer;
         color: white;
     }
+    .scroll-header_list__hover {
+        cursor: default;
+    }
     .scroll-header_list__hover:hover {
         cursor: default;
         color: #67696A;
     }
-    .scroll-header_list_span {
-        height: 10px;
-        width: 2px;
-        border-right: 1px solid rgba(0,0,0,0.2);
-        transform: translateY(10px);
+    .scroll-header_list--reserve {
+        position: relative;
     }
-	#scroll-header_list_span01 {
-		margin-left: -5px;
-	}
-	#scroll-header_list_span02 {
-		margin-left: -19px;
-        height: 20px;
-	}
-   #scroll-header_list_span03 {
-		margin-right: -12px;
-	}
+    .scroll-header_reserve-note {
+        display: block;
+        margin-top: 2px;
+        font-size: 9px;
+        line-height: 1.2;
+        white-space: nowrap;
+        color: #67696A;
+        cursor: default;
+    }
+    .scroll-header_list_span {
+        display: none;
+    }
 
 
 
@@ -274,7 +324,7 @@ header {
             transform: translateY(-200%);
         }
         100% {
-            transform: translateY(-5px);
+            transform: translateY(0);
         }
         
     }
@@ -290,7 +340,7 @@ header {
             transform: translateY(-15px);
         }
         100% {
-            transform: translateY(-5px);
+            transform: translateY(0);
         }
         
     }
@@ -607,36 +657,31 @@ header {
     background-image: url(https://shibukawa-massage-happy.com/wp-content/uploads/2021/07/1111.png) ;
     background-repeat: no-repeat;
     background-size: 10%;
-    background-position-y: 14px;
-    background-position-x: 5px;
+    background-position: 5px center;
 }
 .sec3-text02 {
     background-image: url(https://shibukawa-massage-happy.com/wp-content/uploads/2021/07/2222.png) ;
     background-repeat: no-repeat;
     background-size: 10%;
-    background-position-y: 14px;
-    background-position-x: 5px;
+    background-position: 5px center;
 }
 .sec3-text03 {
     background-image: url(https://shibukawa-massage-happy.com/wp-content/uploads/2021/07/3333.png) ;
     background-repeat: no-repeat;
     background-size: 10%;
-    background-position-y: 7px;
-    background-position-x: 5px;
+    background-position: 5px center;
 }
 .sec3-text04 {
     background-image: url(https://shibukawa-massage-happy.com/wp-content/uploads/2021/07/4444.png) ;
     background-repeat: no-repeat;
     background-size: 10%;
-    background-position-y: 14px;
-    background-position-x: 5px;
+    background-position: 5px center;
 }
 .sec3-text05 {
     background-image: url(https://shibukawa-massage-happy.com/wp-content/uploads/2021/07/5555.png) ;
     background-repeat: no-repeat;
     background-size: 10%;
-    background-position-y: 8px;
-    background-position-x: 5px;
+    background-position: 5px center;
 }
 
 .sec3-text_span {
@@ -716,8 +761,7 @@ header {
         background-image: url(https://shibukawa-massage-happy.com/wp-content/uploads/2021/07/1111.png) ;
         background-repeat: no-repeat;
         background-size: 10%;
-        background-position-x: -8px;
-        background-position-y: 7px;
+        background-position: -8px center;
         white-space: nowrap;
         padding-left: 80px;
     }
@@ -725,8 +769,7 @@ header {
         background-image: url(https://shibukawa-massage-happy.com/wp-content/uploads/2021/07/2222.png) ;
         background-repeat: no-repeat;
         background-size: 10%;
-        background-position-x: -3px;
-        background-position-y: -4px;
+        background-position: -3px center;
         padding-left: 80px;
         margin: 30px 0;
     }
@@ -734,8 +777,7 @@ header {
         background-image: url(https://shibukawa-massage-happy.com/wp-content/uploads/2021/07/3333.png) ;
         background-repeat: no-repeat;
         background-size: 10%;
-        background-position-x: -3px;
-        background-position-y: -4px;
+        background-position: -3px center;
         padding-left: 80px;
         margin: 30px 0;
     }
@@ -743,8 +785,7 @@ header {
         background-image: url(https://shibukawa-massage-happy.com/wp-content/uploads/2021/07/4444.png) ;
         background-repeat: no-repeat;
         background-size: 10%;
-        background-position-x: -3px;
-        background-position-y: -4px;
+        background-position: -3px center;
         padding-left: 80px;
         margin: 30px 0;
     }
@@ -752,8 +793,7 @@ header {
         background-image: url(https://shibukawa-massage-happy.com/wp-content/uploads/2021/07/5555.png) ;
         background-repeat: no-repeat;
         background-size: 10%;
-        background-position-x: -3px;
-        background-position-y: -4px;
+        background-position: -3px center;
         padding-left: 80px;
         margin: 30px 0;
     }
@@ -925,20 +965,26 @@ header {
 .footer-list li {
     border-bottom: 1px dotted #67696A;
     margin-left: 0;
-    height: 65px;
+    height: auto;
+    min-height: 65px;
     font-size: 18px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .footer-list li a {
-    display: block;
-    width: 648px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 60px;
-    padding-top: 20px;
+    min-height: 65px;
+    height: auto;
+    padding: 12px 8px;
     transition: 1s;
+    box-sizing: border-box;
 }
 .footer-list li a:hover {
-    padding-bottom: 5px;
     color: #FF7C00;
     transition: 0.5s;
 }
@@ -1327,16 +1373,26 @@ header {
 .drawer-menu li {
     text-align: center;
     border-bottom: 1px dotted #CCC;/*各メニューリストの下線*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
 }
 
 .drawer-menu li a {
-    display: inline-block;
-	height: 10px;/*各メニューリストの縦幅*/
-    /* line-height: 50px; *//*各メニューリストの縦幅*/
-    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+	height: auto;
+    min-height: 70px;
+    padding: 10px 8px;
     font-size: 15px;
     -webkit-transition: all .8s;
     transition: all .8s;
+    box-sizing: border-box;
+    line-height: 1.35;
 }
 
 .navMenu {
@@ -1344,10 +1400,14 @@ header {
 }
 
 .navMenu ul li a {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-size: 20px;
-    height: 50px;
-    margin-top: 10px;
+    height: auto;
+    min-height: 70px;
+    margin-top: 0;
 } 
 
 .navMenu ul li a:hover {
@@ -1369,9 +1429,19 @@ header {
 
 .span {
     font-size: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 0;
+    margin-top: 2px;
     color: #2ffc00;
     opacity: 0.6;
+}
+
+.drawer-menu__reserve {
+    cursor: default;
+}
+
+.drawer-menu__reserve-note {
+    color: inherit;
+    opacity: 1;
 }
 /*メニューボタンここまで-------------------------------------*/
 
@@ -1670,7 +1740,7 @@ header {
 
 
 
-/* 5つの特徴コースページ------------------------------------------ */
+/* 選ばれる5つの理由ページ------------------------------------------ */
 
 
 .feature-sec_title {
@@ -1690,11 +1760,258 @@ header {
     font-weight: 540;
 }
 
+.features-page__ttl {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    padding: 0 12px 1.5rem;
+}
 
+.features-banner-ttl {
+    color: #fa6422;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 1.45;
+    font-weight: 700;
+    margin: 1.2rem 12px 1.2rem;
+    display: block;
+}
 
+.features-banner-ttl__icon {
+    display: none;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
 
+.features-banner-ttl__text {
+    text-align: center;
+    line-height: 1.45;
+}
 
-/* 5つの特徴コースページ終了------------------------------------------ */
+@media screen and (min-width: 648px) {
+    .features-banner-ttl {
+        font-size: 1.85rem;
+        margin: 0 20px 1.5rem;
+    }
+    .features-banner-ttl__icon {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* 長いナビ文言の改行対応 */
+.nav-wrapper_list .nav-wrapper_link {
+    line-height: 1.25;
+    padding: 6px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    white-space: normal;
+}
+
+.footer-pc_wrapper_list02 {
+    white-space: normal !important;
+    height: auto !important;
+    min-height: 47.5px;
+    line-height: 1.3 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6px 0;
+}
+
+.footer-list li a {
+    white-space: normal;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.footer-list__reserve {
+    padding-bottom: 22px;
+}
+
+.footer-list__reserve-link {
+    cursor: default;
+    position: relative;
+}
+
+.footer-list li a .footer-list__note {
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    top: auto;
+    transform: translateX(-50%);
+    font-size: 12px;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.features-page .sec3-text {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    line-height: 1.5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.features-page .sec3-text01,
+.features-page .sec3-text02,
+.features-page .sec3-text03,
+.features-page .sec3-text04,
+.features-page .sec3-text05 {
+    background-position: 5px center;
+}
+
+@media screen and (min-width: 648px) {
+    .features-page .sec3-text {
+        font-size: 22px;
+    }
+
+    .features-page .sec3-text01,
+    .features-page .sec3-text02,
+    .features-page .sec3-text03,
+    .features-page .sec3-text04,
+    .features-page .sec3-text05 {
+        background-position: left center;
+        line-height: 1.5;
+        white-space: normal;
+        margin: 30px 0;
+    }
+}
+
+/* 選ばれる5つの理由ページ終了------------------------------------------ */
+
+/* コンテンツページ共通------------------------------------------ */
+.content-page p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.content-page__heading {
+    margin: 2rem 4% 1rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #fa6422;
+    border-bottom: 2px dotted #eedcb3;
+}
+
+.content-page__heading--features {
+    text-align: center;
+    font-size: 1.35rem;
+}
+
+@media screen and (min-width: 648px) {
+    .content-page__heading--features {
+        font-size: 1.55rem;
+    }
+}
+
+.content-page__heading-icon {
+    display: none;
+}
+
+.content-page__subheading {
+    margin: 1.5rem 4% 0.5rem;
+    font-size: 1rem;
+    color: #67696A;
+}
+
+.content-page__lead {
+    font-weight: 700;
+    text-align: center;
+}
+
+.content-page__list {
+    margin: 0.5rem 8% 1rem;
+    padding-left: 1.2rem;
+    list-style: disc;
+}
+
+.content-page__list li {
+    list-style: disc;
+    margin-bottom: 0.35rem;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.content-page__img-wrap {
+    margin: 1.5rem 4%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.content-page__img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.bodycare-page > .relaxation-sec > .content-page__img-wrap {
+    margin: 0 4% 1rem;
+}
+
+.bodycare-page .relaxation-sec_img02,
+.page-bodycare .relaxation-sec_img02,
+.bodycare-page .content-page__img,
+.page-bodycare .content-page__img,
+#bodycare-photo-1,
+#bodycare-photo-2,
+#bodycare-photo-3,
+#bodycare-photo-4 {
+    border-radius: 8px;
+    padding: 0;
+    width: 100%;
+    display: block;
+}
+
+.content-page__signature {
+    margin-top: 2rem !important;
+    text-align: right;
+    line-height: 1.8;
+}
+
+.greeting-page__ttl {
+    padding-top: 1rem;
+}
+
+/* 整体ページは左揃え（先頭見出しは除く） */
+.page-bodycare .page_ttl,
+.page-bodycare .content-page,
+.page-bodycare .content-page p,
+.page-bodycare .content-page__lead,
+.page-bodycare .content-page__heading:not(.content-page__heading--features),
+.page-bodycare .content-page__subheading,
+.page-bodycare .content-page__list,
+.bodycare-page .page_ttl,
+.bodycare-page .content-page,
+.bodycare-page .content-page p,
+.bodycare-page .content-page__lead,
+.bodycare-page .content-page__heading:not(.content-page__heading--features),
+.bodycare-page .content-page__subheading,
+.bodycare-page .content-page__list {
+    text-align: left;
+}
+
+@media screen and (min-width: 648px) {
+    .content-page p,
+    .content-page__list li {
+        font-size: 16px;
+    }
+    .content-page__heading {
+        font-size: 1.35rem;
+    }
+}
+/* コンテンツページ共通終了------------------------------------------ */
 
 
 
