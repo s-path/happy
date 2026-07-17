@@ -531,9 +531,7 @@ header {
 .front__price-bottom {
     max-width: 800px;
     margin: 0 auto;
-    margin-bottom: 20px;
     padding-bottom: 50px;
-    border-bottom: 1px solid lightgray;
 }
 
 
@@ -1982,6 +1980,55 @@ header {
 
 .greeting-page__ttl {
     padding-top: 1rem;
+}
+
+/* 初めての方へ：左揃え＋左右paddingで縦位置を揃える */
+.page-greeting .greeting-sec_wrapper,
+.greeting-page .greeting-sec_wrapper {
+    margin: 0;
+    padding: 0 4%;
+}
+
+.page-greeting .content-page,
+.page-greeting .content-page p:not(.content-page__signature),
+.page-greeting .content-page__lead,
+.page-greeting .content-page__heading,
+.page-greeting .content-page__list,
+.greeting-page .content-page,
+.greeting-page .content-page p:not(.content-page__signature),
+.greeting-page .content-page__lead,
+.greeting-page .content-page__heading,
+.greeting-page .content-page__list {
+    text-align: left;
+}
+
+.page-greeting .content-page__heading,
+.greeting-page .content-page__heading {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.page-greeting .content-page__list,
+.greeting-page .content-page__list {
+    margin-left: 1.2rem;
+    margin-right: 0;
+}
+
+.page-greeting .content-page__img,
+.greeting-page .content-page__img,
+.page-greeting .greeting-img,
+.greeting-page .greeting-img {
+    display: block;
+    width: calc(100% - 40px);
+    max-width: none;
+    margin: 1.5rem auto;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.page-greeting .content-page p.content-page__signature,
+.greeting-page .content-page p.content-page__signature {
+    text-align: right;
 }
 
 /* 整体ページは左揃え（先頭見出しは除く） */

@@ -1,11 +1,9 @@
 <?php get_header(); ?>
 
-<section id="greeting-sec">
+<section id="greeting-sec" class="greeting-page">
     <div class="greeting-sec">
         <div class="greeting-sec_wrapper content-page">
-            <p class="page_ttl greeting-page__ttl">初めての方へ</p>
-            <!-- ※写真差し替え予定：現状は既存の院長写真を使用 -->
-            <img src="<?php bloginfo('template_directory'); ?>/images/67owner.jpg" alt="整体院Happy 院長 前野 光成" class="greeting-img content-page__img" id="greeting-photo">
+            <img src="<?php bloginfo('template_directory'); ?>/images/greeting-owner.png" alt="整体院Happy 院長 前野 光成" class="greeting-img content-page__img" id="greeting-photo">
 
             <h2 class="content-page__heading">はじめまして。<br>整体院Happy 院長の前野 光成です。</h2>
             <p>この度は、整体院Happyのホームページをご覧いただき、ありがとうございます。</p>
