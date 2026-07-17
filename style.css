@@ -534,6 +534,24 @@ header {
     padding-bottom: 50px;
 }
 
+.front__counseling {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+}
+
+@media screen and (min-width: 648px) {
+    .front__counseling {
+        margin-top: 50px;
+    }
+}
+
+.front__counseling-img {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+}
+
 
 
 

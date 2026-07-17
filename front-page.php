@@ -17,6 +17,9 @@
         <p style=" font-size:14px; margin-bottom: 10%; padding:0 10px;">（体の圧倒的な変化や整体の良さを体感して頂きたく、初回はこの価格にしております）</p>
 		-->
     </div>
+    <div class="front__counseling">
+        <img src="<?php bloginfo('template_directory'); ?>/images/bodycare-counseling.png" alt="カウンセリングの様子" class="front__counseling-img">
+    </div>
 </div>
 
 <!-- 整体院Happyが選ばれる５つの理由 -->
