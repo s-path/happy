@@ -2049,15 +2049,13 @@ header {
     text-align: right;
 }
 
-/* 整体ページは左揃え（先頭見出しは除く） */
-.page-bodycare .page_ttl,
+/* 整体ページは左揃え（料金タイトル・先頭見出しは除く） */
 .page-bodycare .content-page,
 .page-bodycare .content-page p,
 .page-bodycare .content-page__lead,
 .page-bodycare .content-page__heading:not(.content-page__heading--features),
 .page-bodycare .content-page__subheading,
 .page-bodycare .content-page__list,
-.bodycare-page .page_ttl,
 .bodycare-page .content-page,
 .bodycare-page .content-page p,
 .bodycare-page .content-page__lead,
@@ -2067,6 +2065,18 @@ header {
     text-align: left;
 }
 
+.bodycare-page > .relaxation-sec > .page_ttl,
+.page-bodycare .page_ttl {
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 1.9rem;
+}
+
+.bodycare-page .page_ttl__time,
+.page-bodycare .page_ttl__time {
+    margin-left: 0.55em;
+}
+
 @media screen and (min-width: 648px) {
     .content-page p,
     .content-page__list li {
@@ -2074,6 +2084,10 @@ header {
     }
     .content-page__heading {
         font-size: 1.35rem;
+    }
+    .bodycare-page > .relaxation-sec > .page_ttl,
+    .page-bodycare .page_ttl {
+        font-size: 2.5rem;
     }
 }
 /* コンテンツページ共通終了------------------------------------------ */

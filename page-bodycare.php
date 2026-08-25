@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <section id="relaxation-sec" class="bodycare-page">
     <div class="relaxation-sec">
+        <p class="page_ttl">整 体<span class="page_ttl__time">60分</span> <span class="page_ttl__price">¥6,600</span></p>
         <div class="relaxation-sec_wrapper content-page">
 
         <h2 class="content-page__heading content-page__heading--features">【整体院Happyの整体について】</h2>
